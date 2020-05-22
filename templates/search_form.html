@@ -1,0 +1,10 @@
+<form method="post" action="/search/">
+    {% csrf_token %}
+    <label>Name<input type="text" name="name"></label>
+    <label>Minimal capacity<input type="number" name="capacity"></label>
+    <label>Projector<input type="checkbox" name="projector"></label>
+    <input type="submit" value="Submit">
+</form>
+
+
+

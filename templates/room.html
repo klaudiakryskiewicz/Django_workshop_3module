@@ -3,23 +3,18 @@
 {% block content %}
     {{ komunikat }}
 <table>
-<tr>
-    <th>Room</th> <th>Capacity</th> <th>Availability</th> <th>Projector</th> <th>Modify</th> <th>Delete</th> <th>Book</th>
-</tr>
-{% for room in rooms %}
     <tr>
-        <td><a href="/room/{{ room.id }}"> {{ room.name }} </a></td>
+        <th>Name</th> <th>Capacity</th> <th>Projector</th> <th>Reservations</th> <th>Modify</th> <th>Delete</th> <th>Book</th>
+    </tr>
+    <tr>
+        <td>{{ room.name }} </td>
         <td>{{ room.capacity }}</td>
-        <td>AVAILABLE*</td>
         <td>{{ room.projector }}</td>
+        <td> {% include 'reservation_list.html' %}</td>
         <td><a href="/room/modify/{{ room.id }}">Modify</a></td>
         <td><a href="/room/delete/{{ room.id }}">Delete</a></td>
         <td><a href="/room/reserve/{{ room.id }}">Book</a></td>
     </tr>
-{% endfor %}
 </table>
-
-    <h3>Search available rooms:</h3>
-    {% include 'search_form.html' %}
 
 {% endblock %}

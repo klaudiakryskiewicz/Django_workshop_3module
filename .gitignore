@@ -1,0 +1,6 @@
+venv/
+.idea/
+__pycache__/
+warsztat3/__pycache__/
+conference_rooms/__pycache__/
+conference_rooms/migrations/__pycache__/

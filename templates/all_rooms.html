@@ -10,7 +10,7 @@
     <tr>
         <td><a href="/room/{{ room.id }}"> {{ room.name }} </a></td>
         <td>{{ room.capacity }}</td>
-        <td>AVAILABLE*</td>
+        <td>{{ room.availability }}</td>
         <td>{{ room.projector }}</td>
         <td><a href="/room/modify/{{ room.id }}">Modify</a></td>
         <td><a href="/room/delete/{{ room.id }}">Delete</a></td>

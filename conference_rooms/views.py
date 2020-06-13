@@ -10,14 +10,7 @@ def all_rooms(request):
     if not Room.objects.all():
         return render(request, 'no_rooms.html')
     rooms = Room.objects.all()
-    present = datetime.now().date()
-    availability = []
-    for room in rooms:
-        if Reservation.objects.filter(room_id=room.id).filter(date=present):
-            availability.append(False)
-        else:
-            availability.append(True)
-    return render(request, 'all_rooms.html', {'rooms': rooms, 'availability': availability})
+    return render(request, 'all_rooms.html', {'rooms': rooms})
 
 
 class AddRoomView(View):
